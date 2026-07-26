@@ -13,6 +13,10 @@ async function main() {
   utils.printBanner();
 
   const tokenValue = token.skillToken(process.env.GUAIKEI_API_TOKEN);
+  if (tokenValue === "") {
+    utils.printWarn("警告: 你的 GUAIKEI_API_TOKEN 未正确配置,技能已暂停. ");
+    process.exit(1);
+  }
   let hotTask = null;
   try {
     hotTask = await hot.getHotTask(tokenValue);

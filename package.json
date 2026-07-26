@@ -1,7 +1,7 @@
 {
   "name": "douyin-public-customer-acquisition",
-  "version": "1.0.0",
-  "description": "抖音公开数据智能分析工具。支持关键词搜索排序、抖人作品抓取、实时热榜获取，适用于短视频营销、竞品分析和热点监控，助力爆款内容策划与流量追踪。",
+  "version": "1.0.1",
+  "description": "从抖音公域评论区「淘金」，按关键词定位视频 → 用视频 ID 拉评论 → 拿到高意向客户的联系方式与需求，低成本截流竞品流量。",
   "keywords": [
     "douyin",
     "customer-acquisition",

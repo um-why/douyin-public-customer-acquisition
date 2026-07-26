@@ -75,7 +75,10 @@ async function main() {
   limit = validator.optionFormat(limit);
 
   const tokenValue = token.skillToken(process.env.GUAIKEI_API_TOKEN);
-  if (tokenValue === "") return;
+  if (tokenValue === "") {
+    utils.printWarn("警告: 你的 GUAIKEI_API_TOKEN 未正确配置,技能已暂停. ");
+    process.exit(1);
+  }
   let postTask = null;
   try {
     const status = await post.createPostTask(tokenValue, url, limit);

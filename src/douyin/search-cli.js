@@ -77,7 +77,7 @@ async function main() {
   const args = process.argv.slice(2);
   if (args.length === 0) {
     printHelp();
-    return;
+    process.exit(1);
   }
 
   const parsedArgs = parseArgs(args);
@@ -109,7 +109,10 @@ async function main() {
   );
 
   const tokenValue = token.skillToken(process.env.GUAIKEI_API_TOKEN);
-  if (tokenValue === "") return;
+  if (tokenValue === "") {
+    utils.printWarn("警告: 你的 GUAIKEI_API_TOKEN 未正确配置,技能已暂停. ");
+    return;
+  }
   let searchTask = null;
   try {
     const status = await search.createSearchTask(
